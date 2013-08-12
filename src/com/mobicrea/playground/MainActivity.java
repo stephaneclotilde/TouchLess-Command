@@ -48,13 +48,10 @@ public class MainActivity extends Activity {
 				if(event.sensor.getType()==Sensor.TYPE_PROXIMITY)
 				{
 					Toast.makeText(MainActivity.this, "proximity sensor "+event.values[0], Toast.LENGTH_SHORT).show();
-					Window window = getWindow();
-				    window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
-				            		| WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-				            		| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
-				            		| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-				    
-				    if (isGoogleVoiceRecognizerInstalled()) 
+				
+					unlockOrLockDevice(UNLOCK);
+					
+					if (isGoogleVoiceRecognizerInstalled()) 
 				    	startVoiceRecognitionActivity();
 				    
 				    Handler handler = new Handler();
@@ -62,11 +59,7 @@ public class MainActivity extends Activity {
 						
 						@Override
 						public void run() {
-							Window window = getWindow();
-						    window.clearFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
-						            		| WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-						            		| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
-						            		| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+							unlockOrLockDevice(LOCK);
 						}
 					}, 3000);
 				}
@@ -86,12 +79,20 @@ public class MainActivity extends Activity {
 	
 	private void unlockOrLockDevice(int b)
 	{
+		Window window = getWindow();
 		if (b==UNLOCK)
 		{
-			
+			window.clearFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+							  | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+							  | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+							  | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		}
 		else//LOCK
 		{
+			window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+							| WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+							| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+							| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 			
 		}
 	}
