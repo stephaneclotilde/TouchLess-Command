@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PlayGround</string>
+    <string name="app_name">TouchLess Command</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="btnActivate">Activate</string>
+	<string name="btnDeactivate">Deactivate</string>
+	<string name="confirmExit">Confirm</string>
+    <string name="cancelExit">Cancel</string>
+    <string name="exitText">You are stopping TouchLess Command. If you just want to quit this screen, press the back key</string>
+    <string name="stopIntervalTime">Stop interval</string>
+    <string name="holdStartTime">"start Time : "</string>
+    <string name="holdEndTime">"end Time : "</string>
+    <string name="modify">Modify</string>
 
 </resources>

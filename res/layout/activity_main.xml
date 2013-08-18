@@ -8,9 +8,71 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/btnApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginLeft="16dp"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnApply"
+        android:layout_marginTop="41dp"
+        android:text="@string/stopIntervalTime"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text=" " />
+
+    <Button
+        android:id="@+id/btnModifyStartTime"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentLeft="true"
+        android:text="@string/modify"
+        android:onClick="modifyHoldTime" />
+
+    <TextView
+        android:id="@+id/txtStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btnModifyStartTime"
+        android:layout_toRightOf="@id/btnModifyStartTime"
+        android:layout_marginLeft="20dp"
+        android:text="@string/holdStartTime"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/btnModifyEndTime"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btnModifyStartTime"
+        android:layout_below="@id/btnModifyStartTime"
+        android:text="@string/modify"
+        android:onClick="modifyHoldTime"  />
+    
+    <TextView
+        android:id="@+id/txtEndTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btnModifyEndTime"
+        android:layout_toRightOf="@id/btnModifyEndTime"
+        android:layout_marginLeft="20dp"
+        android:text="@string/holdEndTime"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

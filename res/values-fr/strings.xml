@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TouchLess Command</string>
+    <string name="action_settings">Réglages</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btnActivate">Activer</string>
+	<string name="btnDeactivate">Désactiver</string>
+	<string name="confirmExit">Confirmer</string>
+    <string name="cancelExit">Annuler</string>
+    <string name="exitText">Vous etes en train d\'arreter TouchLess Command. Si vous souhaitez juste quitter cet écran, appuyez sur la touche Retour</string>
+
+</resources>
